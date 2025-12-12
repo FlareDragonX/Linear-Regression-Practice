@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Regression Practice</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-bg">Linear Regression Practice</h1>
+        <p class="subtitle text-bg">Move the sliders to fit the data</p>
+
+        <div class="controls">
+            <div class="slider-group">
+                <div class="slider-label text-bg">
+                    <label for="w0">w0 (intercept):</label>
+                    <span class="value-display" id="w0-value">0.00</span>
+                </div>
+                <input type="range" id="w0" min="-10" max="10" step="0.01" value="0" class="slider">
+            </div>
+
+            <div class="slider-group">
+                <div class="slider-label text-bg">
+                    <label for="w1">w1:</label>
+                    <span class="value-display" id="w1-value">1.00</span>
+                </div>
+                <input type="range" id="w1" min="-10" max="10" step="0.01" value="1" class="slider">
+            </div>
+        </div>
+
+        <div class="model-equation text-bg">
+            <strong>Model:</strong> y = w0 + w1·x
+        </div>
+
+        <div class="chart-container">
+            <canvas id="chart"></canvas>
+        </div>
+
+        <div class="mse-display text-bg">
+            <strong>MSE (current line vs. data):</strong> <span id="mse-value">0.00</span>
+        </div>
+
+        <div class="buttons">
+            <button id="new-problem-btn" class="btn btn-primary">New Problem</button>
+            <button id="download-csv-btn" class="btn btn-secondary">Download CSV</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
